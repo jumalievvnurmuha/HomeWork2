@@ -1,13 +1,15 @@
-const input = document.querySelector('#colorInput');
+const box = document.querySelector('#box');
+const coords = document.querySelector('#coords');
 
-input.addEventListener('input', () => {
-const color = input.value.trim().toLowerCase();
-const testDiv = document.createElement('div');
-testDiv.style.color = color;
+box.addEventListener('mousemove', (event) => {
 
-if (testDiv.style.color) {
-    document.body.style.backgroundColor = color;
-} else {
-    document.body.style.backgroundColor = 'white';
-}
+const rect = box.getBoundingClientRect();
+const x = event.clientX - rect.left;
+const y = event.clientY - rect.top;
+
+coords.innerText = `X: ${Math.round(x)}, Y: ${Math.round(y)}`;
+});
+
+box.addEventListener('mouseleave', () => {
+  coords.innerText = 'Курсор вне блока';
 });
