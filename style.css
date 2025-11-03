@@ -1,0 +1,12 @@
+#box {
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+  margin: 50px auto;
+}
+
+#coords {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+}
